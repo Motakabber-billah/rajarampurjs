@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>রাজারামপুর নিম্ন মাধ্যমিক বিদ্যালয়</title>
+  <link rel="stylesheet" href="Styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/5565aa961c.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tiro-bangla-regular {
+      font-family: "Tiro Bangla", serif;
+    }
+
+    .tiro-bangla-regular-italic {
+      font-family: "Tiro Bangla", serif;
+    }
+    .transition-all {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Navbar -->
+  <div id="navbar" class="fixed top-0 left-0 w-full bg-blue-600 text-white p-4 z-50 transition-all duration-300">
+    <h1 class="text-xl font-bold">My Website</h1>
+  </div>
+
+  <!-- Content -->
+  <div class="mt-20 p-4 space-y-4">
+    <p class="text-gray-700">Scroll down to hide navbar. Scroll up to show.</p>
+    <!-- Fill with lots of content -->
+    <div class="h-[2000px] bg-gray-100 p-4">
+      <p>Long content here...</p>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop) {
+        // Scroll Down → Hide
+        navbar.classList.add("opacity-0", "pointer-events-none");
+        navbar.classList.remove("opacity-100");
+      } else {
+        // Scroll Up → Show
+        navbar.classList.remove("opacity-0", "pointer-events-none");
+        navbar.classList.add("opacity-100");
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, false);
+  </script>
+
+</body>
+</html>
