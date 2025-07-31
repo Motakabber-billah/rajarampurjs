@@ -20,10 +20,20 @@
         .tiro-bangla-regular-italic {
             font-family: "Tiro Bangla", serif;
         }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #tab1:checked~.content #content1,
+        #tab2:checked~.content #content2,
+        #tab3:checked~.content #content3 {
+            display: block;
+        }
     </style>
 </head>
 
-<body class="tiro-bangla-regular">
+<body class="tiro-bangla-regular bg-[#FFFAF0]">
     <header>
         <nav class="bg-[#FFECF2] w-full h-auto lg:h-64 px-3 md:px-20">
             <div
@@ -83,13 +93,13 @@
                                         class="font-bold text-[#393D72] hover:text-white text-base bg-[#FFECF2] hover:bg-[#FF4880] mb-2">আমাদের
                                         সম্পর্কে</a>
                                     <ul class="p-2">
-                                        <li><a
+                                        <li><a href="http://127.0.0.1:5500/managing-committee.html"
                                                 class="font-bold text-[#393D72] hover:text-white text-base bg-[#FFECF2] hover:bg-[#FF4880] ">ম্যানেজিং
                                                 কমিটি</a></li>
-                                        <li><a
+                                        <li><a href="http://127.0.0.1:5500/teachers.html"
                                                 class="font-bold text-[#393D72] hover:text-white text-base bg-[#FFECF2] hover:bg-[#FF4880] ">শিক্ষকবৃন্দ</a>
                                         </li>
-                                        <li><a
+                                        <li><a href="http://127.0.0.1:5500/staff.html"
                                                 class="font-bold text-[#393D72] hover:text-white text-base bg-[#FFECF2] hover:bg-[#FF4880] ">কর্মচারীবৃন্দ</a>
                                         </li>
                                     </ul>
@@ -120,13 +130,13 @@
                                         class="font-bold text-[#393D72] hover:text-white text-base bg-[#FFECF2] hover:bg-[#FF4880] ">
                                         আমাদের সম্পর্কে</summary>
                                     <ul class="p-2">
-                                        <li><a
+                                        <li><a href="http://127.0.0.1:5500/managing-committee.html"
                                                 class="font-bold text-[#393D72] hover:text-white text-base bg-[#FFECF2] hover:bg-[#FF4880] mb-2 ">ম্যানেজিং
                                                 কমিটি</a></li>
-                                        <li><a
+                                        <li><a href="http://127.0.0.1:5500/teachers.html"
                                                 class="font-bold text-[#393D72] hover:text-white text-base bg-[#FFECF2] hover:bg-[#FF4880] mb-2 ">শিক্ষকবৃন্দ</a>
                                         </li>
-                                        <li><a
+                                        <li><a href="http://127.0.0.1:5500/staff.html"
                                                 class="font-bold text-[#393D72] hover:text-white text-base bg-[#FFECF2] hover:bg-[#FF4880] mb-2">কর্মচারীবৃন্দ</a>
                                         </li>
                                     </ul>
@@ -198,38 +208,145 @@
         </div>
     </header>
     <main>
+        <section class="">
+            <h3 class="text-center font-bold text-3xl text-[#7FFF00] mt-10">ম্যানেজিং কমিটি</h3>
+            <div class=" md:p-6 ">
+                <div class="grid justify-items-center w-full md:mx-auto rounded shadow-md relative">
+                    <!-- Radio Inputs -->
+                    <input type="radio" name="tabs" id="tab1" checked>
+                    <input type="radio" name="tabs" id="tab2">
 
+                    <!-- Tab Labels -->
+                    <div class="flex flex-col md:flex-row space-x-2 gap-5 mb-4">
+                        <label for="tab1"
+                            class="cursor-pointer px-4 py-2 rounded text-xl bg-[#4169E1] text-white hover:bg-[#FF00FF] transition">নিয়মিত
+                            ম্যানেজিং কমিটি</label>
+                        <label for="tab2"
+                            class="cursor-pointer px-4 py-2 rounded text-xl bg-[#4169E1] text-white hover:bg-[#FF00FF] transition">এডহক
+                            কমিটি</label>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="content ">
+                        <div id="content1" class="hidden">
+                            <h2 class="text-xl font-semibold mb-8 text-center">নিয়মিত ম্যানেজিং কমিটি</h2>
+                            <div class="collapse bg-base-200 mb-5">
+                                <input type="checkbox" class="peer" />
+                                <div
+                                    class="collapse-title bg-primary text-primary-content peer-checked:bg-secondary  peer-checked:text-secondary-content text-xl">
+                                    বর্তমানে নিয়মিত ম্যানেজিং কমিটি নেই
+                                </div>
+                                <div
+                                    class="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                                    <p>এডহক কমিটি গঠিত হয়েছে</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="content2" class="hidden pb-6">
+                            <h2 class="text-xl font-semibold mb-8 text-center">এডহক কমিটি</h2>
+                            <p class="mb-4 text-black text-center text-xl">দিনাজপুর শিক্ষা বোর্ডের স্মারক নংঃ ও তারিখঃ
+                                মোতাবেক একটি এডহক কমিটি গঠিত হয়।</p>
+                            <div class="flex flex-col items-center justify-center">
+                                <div class="flex">
+                                    <h3 class="w-14 md:w-16 md:h-10 border-2 border-orange-300 p-2 text-center">ক্রমিক
+                                    </h3>
+                                    <h3 class="w-32 md:w-64 md:h-10 border-2 border-orange-300 p-2">নাম</h3>
+                                    <h3 class="w-20 md:w-20 md:h-10 border-2 border-orange-300 p-2 text-center">পদবি
+                                    </h3>
+                                    <h3 class="w-14 md:w-32 md:h-10 border-2 border-orange-300 p-2 text-center">মোবাইল
+                                    </h3>
+                                </div>
+                                <div class="flex">
+                                    <h3 class="w-14 md:w-16 md:h-auto border-2 border-orange-300 p-2 text-center">০১
+                                    </h3>
+                                    <h3 class="w-32 md:w-64 md:h-auto border-2 border-orange-300 p-2">সহকারী
+                                        প্রোগ্রামার, ইউআইটিআরসিই, ব্যানবেইস</h3>
+                                    <h3 class="w-20 md:w-20 md:h-auto border-2 border-orange-300 p-2 text-center">সভাপতি
+                                    </h3>
+                                    <h3 class="w-14 md:w-32 md:h-auto border-2 border-orange-300 p-2 text-center">
+                                        ০১৭৩৭১৪৫৩০৮</h3>
+                                </div>
+                                <div class="flex">
+                                    <h3 class="w-14 md:w-16 md:h-auto border-2 border-orange-300 p-2 text-center">০২
+                                    </h3>
+                                    <h3 class="w-32 md:w-64 md:h-auto border-2 border-orange-300 p-2">নাম</h3>
+                                    <h3 class="w-20 md:w-20 md:h-auto border-2 border-orange-300 p-2 text-center">শিক্ষক
+                                        প্রতিনিধি</h3>
+                                    <h3 class="w-14 md:w-32 md:h-auto border-2 border-orange-300 p-2 text-center">মোবাইল
+                                    </h3>
+                                </div>
+                                <div class="flex">
+                                    <h3 class="w-14 md:w-16 md:h-auto border-2 border-orange-300 p-2 text-center">০৩
+                                    </h3>
+                                    <h3 class="w-32 md:w-64 md:h-auto border-2 border-orange-300 p-2">নাম</h3>
+                                    <h3 class="w-20 md:w-20 md:h-auto border-2 border-orange-300 p-2 text-center">
+                                        অভিভাবক প্রতিনিধি</h3>
+                                    <h3 class="w-14 md:w-32 md:h-auto border-2 border-orange-300 p-2 text-center">মোবাইল
+                                    </h3>
+                                </div>
+                                <div class="flex">
+                                    <h3 class="w-14 md:w-16 md:h-auto border-2 border-orange-300 p-2 text-center">০৪
+                                    </h3>
+                                    <h3 class="w-32 md:w-64 md:h-auto border-2 border-orange-300 p-2">প্রধান শিক্ষক</h3>
+                                    <h3 class="w-20 md:w-20 md:h-auto border-2 border-orange-300 p-2 text-center">সদস্য
+                                        সচিব</h3>
+                                    <h3 class="w-14 md:w-32 md:h-auto border-2 border-orange-300 p-2 text-center">মোবাইল
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class=" mt-10 flex items-center justify-center">
+                                <a href="#" class="border-2 rounded-lg border-orange-400 p-4 hover:bg-orange-400 hover:text-white text-xl">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer class="flex flex-col md:flex-row justify-center md:gap-5 lg:gap-20 xl:gap-40 md:p-1 lg:p-10 mt-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
-    <aside class="flex flex-col items-center mb-10 md:mb-0 justify-center">
-      <img class="rounded-full w-24 h-24 md:w-32 md:h-32 mt-4 md:mt-0" src="Images/logo rajarampur.png" alt="">
-      <p class="text-white mt-3 font-semibold text-center">রাজারামপুর নিম্ন মাধ্যমিক বিদ্যালয়<br />পীরগঞ্জ, রংপুর</p>
-    </aside>
-    <div class="">
-      <div class="flex flex-col md:flex-row justify-center items-center lg:gap-12 xl:gap-20">
-        <nav class="w-full md:w-1/2 flex flex-col space-y-4 pl-4 md:pl-0">
-          <header class="text-center text-white text-xl lg:text-2xl">গুরুত্বপূর্ণ লিংক</header>
-          <a href="https://dshe.gov.bd/" class="link link-hover text-white md:text-x[14px] lg:text-xl">মাধ্যমিক ও উচ্চ মাধ্যমিক অধিদপ্তর</a>
-          <a href="https://banbeis.gov.bd/" class="link link-hover text-white md:text-x[14px] lg:text-xl">বাংলাদেশ শিক্ষাতথ্য ও পরিসংখ্যান ব্যুরো (ব্যানবেইস)</a>
-          <a href="https://ntrca.gov.bd/" class="link link-hover text-white md:text-x[14px] lg:text-xl">বেসরকারি শিক্ষক নিবন্ধন ও প্রত্যয়ন কর্তৃপক্ষ (এনটিআরসিএ)</a>
-          <a href="https://dinajpureducationboard.gov.bd/" class="link link-hover text-white md:text-x[14px] lg:text-xl">মাধ্যমিক ও উচ্চ মাধ্যমিক শিক্ষা বোর্ড, দিনাজপুর</a>
-          <a href="https://nctb.gov.bd/" class="link link-hover text-white md:text-x[14px] lg:text-xl">জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড, বাংলাদেশ</a>
-          <a href="https://dme.gov.bd/" class="link link-hover text-white md:text-x[14px] lg:text-xl">মাদ্রাসা শিক্ষা অধিদপ্তর</a>
-        </nav>
-        <nav class="w-full md:w-1/2 flex flex-col justify-center pl-4 md:pl-0 space-y-4">
-          <header class="text-center text-white text-xl lg:text-2xl mt-10 md:mt-0">যোগাযোগ</header>
-          <a class=" text-white md:text-x[14px] lg:text-xl">গ্রামঃ রাজারামপুর, ইউনিয়নঃ বড়আলমপুর,<br><br>ডাকঘরঃ জাফরপাড়া, পোস্ট অফিসঃ জাফরপাড়া <br><br>উপজেলাঃ পীরগঞ্জ, জেলাঃ রংপুর</a>
-          <a class="link link-hover text-white md:text-x[14px] lg:text-xl">E-Mail: rajarampur@gmail.com</a>
-          <a class="link link-hover text-white md:text-x[14px] lg:text-xl">Mobile: 01234567891</a>
-        </nav>
-      </div>
-      <div class="border-t-2 border-dotted mt-4">
-        <aside class=" mt-4 text-white text-xs ">
-          <p class="hover:text-lime-300 text-center md:text-start mb-6 md:mb-0 px-2 md:px-0">Copyright © 2025 - All right reserved by Rajarampur Junior High School</p>
+    <footer
+        class="flex flex-col md:flex-row justify-center md:gap-5 lg:gap-20 xl:gap-40 md:p-1 lg:p-10 mt-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
+        <aside class="flex flex-col items-center mb-10 md:mb-0 justify-center">
+            <img class="rounded-full w-24 h-24 md:w-32 md:h-32 mt-4 md:mt-0" src="Images/logo rajarampur.png" alt="">
+            <p class="text-white mt-3 font-semibold text-center">রাজারামপুর নিম্ন মাধ্যমিক বিদ্যালয়<br />পীরগঞ্জ, রংপুর
+            </p>
         </aside>
-      </div>
-    </div>
-  </footer>
+        <div class="">
+            <div class="flex flex-col md:flex-row justify-center items-center lg:gap-12 xl:gap-20">
+                <nav class="w-full md:w-1/2 flex flex-col space-y-4 pl-4 md:pl-0">
+                    <header class="text-center text-white text-xl lg:text-2xl">গুরুত্বপূর্ণ লিংক</header>
+                    <a href="https://dshe.gov.bd/"
+                        class="link link-hover text-white md:text-x[14px] lg:text-xl">মাধ্যমিক ও উচ্চ মাধ্যমিক
+                        অধিদপ্তর</a>
+                    <a href="https://banbeis.gov.bd/"
+                        class="link link-hover text-white md:text-x[14px] lg:text-xl">বাংলাদেশ শিক্ষাতথ্য ও পরিসংখ্যান
+                        ব্যুরো (ব্যানবেইস)</a>
+                    <a href="https://ntrca.gov.bd/"
+                        class="link link-hover text-white md:text-x[14px] lg:text-xl">বেসরকারি শিক্ষক নিবন্ধন ও প্রত্যয়ন
+                        কর্তৃপক্ষ (এনটিআরসিএ)</a>
+                    <a href="https://dinajpureducationboard.gov.bd/"
+                        class="link link-hover text-white md:text-x[14px] lg:text-xl">মাধ্যমিক ও উচ্চ মাধ্যমিক শিক্ষা
+                        বোর্ড, দিনাজপুর</a>
+                    <a href="https://nctb.gov.bd/" class="link link-hover text-white md:text-x[14px] lg:text-xl">জাতীয়
+                        শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড, বাংলাদেশ</a>
+                    <a href="https://dme.gov.bd/" class="link link-hover text-white md:text-x[14px] lg:text-xl">মাদ্রাসা
+                        শিক্ষা অধিদপ্তর</a>
+                </nav>
+                <nav class="w-full md:w-1/2 flex flex-col justify-center pl-4 md:pl-0 space-y-4">
+                    <header class="text-center text-white text-xl lg:text-2xl mt-10 md:mt-0">যোগাযোগ</header>
+                    <a class=" text-white md:text-x[14px] lg:text-xl">গ্রামঃ রাজারামপুর, ইউনিয়নঃ বড়আলমপুর,<br><br>ডাকঘরঃ
+                        জাফরপাড়া, পোস্ট অফিসঃ জাফরপাড়া <br><br>উপজেলাঃ পীরগঞ্জ, জেলাঃ রংপুর</a>
+                    <a class="link link-hover text-white md:text-x[14px] lg:text-xl">E-Mail: rajarampur@gmail.com</a>
+                    <a class="link link-hover text-white md:text-x[14px] lg:text-xl">Mobile: 01234567891</a>
+                </nav>
+            </div>
+            <div class="border-t-2 border-dotted mt-4">
+                <aside class=" mt-4 text-white text-xs ">
+                    <p class="hover:text-lime-300 text-center md:text-start mb-6 md:mb-0 px-2 md:px-0">Copyright © 2025
+                        - All right reserved by Rajarampur Junior High School</p>
+                </aside>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
